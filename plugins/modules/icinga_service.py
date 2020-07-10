@@ -221,6 +221,41 @@ from ansible_collections.t_systems_mms.icinga_director.plugins.module_utils.icin
     Icinga2APIObject,
 )
 
+# ===========================================
+# Icinga2 API class
+#
+class Service(Icinga2APIObject):
+    def __init__(self, module, data):
+        path="/service"
+        super(Service, self).__init__(module, path, data)
+
+    def exists(self):
+        ret = self.call_url(
+            path="/service" + "?" + "name=" + self.data["object_name"] + "&" + "host=" + self.data["host"]
+        )
+        print(super(Service, self).exists())
+        return super(Service, self).exists()
+
+    def delete(self):
+        self.ret = self.call_url(
+            path="/service" + "?" + "name=" + self.data["object_name"] + "&" + "host=" + self.data["host"],
+            method="DELETE",
+        )
+        return super(Service, self).exists()
+
+    def modify(self):
+        self.ret = self.call_url(
+            path="/service" + "?" + "name=" + self.data["object_name"] + "&" + "host=" + self.data["host"],
+            method="POST",
+        )
+        return super(Service, self).exists()
+
+    def diff(self):
+        self.ret = self.call_url(
+            path="/service" + "?" + "name=" + self.data["object_name"] + "&" + "host=" + self.data["host"],
+            method="GET",
+        )
+        return super(Service, self).exists()
 
 # ===========================================
 # Module execution.
@@ -286,8 +321,8 @@ def main():
     }
 
     try:
-        icinga_object = Icinga2APIObject(
-            module=module, path="/service", data=data
+        icinga_object = Service(
+            module=module, data=data
         )
     except Exception as e:
         module.fail_json(
