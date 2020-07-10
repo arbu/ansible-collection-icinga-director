@@ -15,6 +15,7 @@ Currently supported modules:
 * `icinga_host_template`
 * `icinga_hostgroup`
 * `icinga_notification`
+* `icinga_service`
 * `icinga_service_apply`
 * `icinga_service_template`
 * `icinga_servicegroup`
