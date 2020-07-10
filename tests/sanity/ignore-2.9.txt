@@ -4,6 +4,7 @@ plugins/modules/icinga_host.py validate-modules:invalid-documentation
 plugins/modules/icinga_host_template.py validate-modules:invalid-documentation
 plugins/modules/icinga_hostgroup.py validate-modules:invalid-documentation
 plugins/modules/icinga_notification.py validate-modules:invalid-documentation
+plugins/modules/icinga_service.py validate-modules:invalid-documentation
 plugins/modules/icinga_service_apply.py validate-modules:invalid-documentation
 plugins/modules/icinga_service_template.py validate-modules:invalid-documentation
 plugins/modules/icinga_servicegroup.py validate-modules:invalid-documentation
