@@ -119,6 +119,7 @@ t_systems_mms.icinga_director >= 1.2.2
 | use_agent                  | no       |
 | vars                       | no       |
 | volatile                   | no       |
+| **icinga_service_template**
 | icinga_service_templates   | no       | []
 | display_name               | no       |
 | disabled                   | no       |
