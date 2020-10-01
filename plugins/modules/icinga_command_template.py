@@ -209,7 +209,8 @@ EXAMPLES = """
     url: "{{ icinga_url }}"
     url_username: "{{ icinga_user }}"
     url_password: "{{ icinga_pass }}"
-    command: "/opt/centreon-plugins/centreon_plugins.pl"
+    command: "/opt/centreon-plugins/centreon_plugins_2.pl"
+    object_name: centreon-plugins-template-2
 """
 
 from ansible.module_utils.basic import AnsibleModule
