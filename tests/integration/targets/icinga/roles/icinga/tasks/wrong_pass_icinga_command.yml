@@ -58,6 +58,14 @@
       snmpv3_priv_key: privkey
       snmpv3_user: user
 
+- name: create command
+  icinga_command:
+    state: present
+    url: "{{ icinga_url }}"
+    url_username: "{{ icinga_user }}"
+    url_password: "iamwrong"
+    command: "/opt/centreon-plugins/centreon_plugins_2.pl"
+
   ignore_errors: true
   register: result
 

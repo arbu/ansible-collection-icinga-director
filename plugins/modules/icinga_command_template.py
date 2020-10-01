@@ -202,6 +202,15 @@ EXAMPLES = """
       snmpv3_auth_key: authkey
       snmpv3_priv_key: privkey
       snmpv3_user: user
+
+- name: create command template
+  icinga_command_template:
+    state: present
+    url: "{{ icinga_url }}"
+    url_username: "{{ icinga_user }}"
+    url_password: "{{ icinga_pass }}"
+        value: $centreon_warning$
+    command: "/opt/centreon-plugins/centreon_plugins.pl"
 """
 
 from ansible.module_utils.basic import AnsibleModule
